@@ -490,12 +490,18 @@ describe("JsonFormatter", () => {
     const f = new JsonFormatter();
     const out = f.format({
       ...entry,
-      error: { name: "Error", message: "fail", stack: "Error: fail\n    at t.ts:1" },
+      error: {
+        name: "Error",
+        message: "fail",
+        stack: "Error: fail\n    at t.ts:1",
+        code: "E_FAIL",
+      },
     });
     const parsed = JSON.parse(out);
     expect(parsed.error.name).toBe("Error");
     expect(parsed.error.message).toBe("fail");
     expect(parsed.error.stack).toContain("t.ts:1");
+    expect(parsed.error.code).toBe("E_FAIL");
   });
 
   it("supports pretty-print with space option", () => {
