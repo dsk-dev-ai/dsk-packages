@@ -22,7 +22,7 @@ function normalizeError(error: unknown): SerializedError {
     };
   }
 
-  if (error !== null && error !== undefined) {
+  if (error !== null) {
     return {
       name: "UnknownError",
       message: String(error),
