@@ -1,13 +1,34 @@
 {
   "name": "@darshankachare/logger",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "private": false,
-  "description": "A lightweight, type-safe logging library",
+  "description": "A lightweight, type-safe logging library for Node.js and browser",
   "license": "MIT",
   "author": "Darshan Kachare",
   "type": "module",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsk-dev-ai/dsk-packages.git",
+    "directory": "packages/logger"
+  },
+  "homepage": "https://github.com/dsk-dev-ai/dsk-packages/tree/main/packages/logger#readme",
+  "bugs": {
+    "url": "https://github.com/dsk-dev-ai/dsk-packages/issues"
+  },
+  "keywords": [
+    "logger",
+    "typescript",
+    "logging",
+    "nodejs",
+    "developer-tools",
+    "structured-logging"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -34,6 +55,7 @@
     "dev": "tsup --watch",
     "lint": "eslint \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

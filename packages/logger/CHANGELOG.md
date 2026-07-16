@@ -1,13 +1,23 @@
 # @darshankachare/logger
 
-## 0.1.1
+## 1.0.0
 
-### Patch Changes
+### Major Changes
 
-- cca5afd: Include README and LICENSE in npm package
+- Production release of the logging library.
 
-## 0.1.0
+### Features
 
-### Minor Changes
-
-- 0575ceb: Initial logger package scaffold with TypeScript, tsup, and Vitest setup
+- Logger API with `debug`, `info`, `warn`, and `error` log levels
+- Level-based filtering — only messages at or above the configured level are emitted
+- Prefix support for identifying log sources
+- ISO 8601 timestamps on every log entry
+- Metadata support — pass structured data alongside log messages
+- Error object handling — Error instances are stringified with stack traces
+- Extensible transport system with built-in `ConsoleTransport`
+- Custom transports — implement `LoggerTransport` for file, cloud, or any destination
+- ANSI color support for console output
+- Zero runtime dependencies
+- Full TypeScript declarations
+- ESM and CommonJS dual format
+- Tree-shakeable
