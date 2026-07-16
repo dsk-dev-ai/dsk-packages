@@ -36,7 +36,7 @@ Current Progress
 
 - ✅ Monorepo Foundation
 - ✅ Repository Infrastructure
-- 🚧 Logger Package
+- ✅ Logger Package
 - ⏳ First npm Release
 - ⏳ Documentation Website
 
