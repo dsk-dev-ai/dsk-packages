@@ -1,63 +1,31 @@
-import type { LogEntry, LogLevel, LoggerTransport } from "./types.js";
+import type { LogEntry, LoggerTransport, LogFormatter } from "./types.js";
+import { TextFormatter } from "./formatters.js";
 
-const LEVEL_COLORS: Record<LogLevel, string> = {
-  debug: "\x1b[90m",
-  info: "\x1b[37m",
-  warn: "\x1b[33m",
-  error: "\x1b[31m",
-};
-
-const RESET = "\x1b[0m";
-const DIM = "\x1b[2m";
-
-function formatTimestamp(iso: string): string {
-  const date = new Date(iso);
-  const hh = String(date.getHours()).padStart(2, "0");
-  const mm = String(date.getMinutes()).padStart(2, "0");
-  const ss = String(date.getSeconds()).padStart(2, "0");
-  return `${hh}:${mm}:${ss}`;
-}
-
-function formatMessage(entry: LogEntry, useColors: boolean): string {
-  const color = LEVEL_COLORS[entry.level] ?? "";
-  const levelTag = entry.level.toUpperCase().padEnd(5);
-  const parts: string[] = [];
-
-  if (useColors) {
-    parts.push(`${color}${levelTag}${RESET}`);
-  } else {
-    parts.push(levelTag);
-  }
-
-  parts.push(formatTimestamp(entry.timestamp));
-
-  if (entry.prefix) {
-    const prefix = `[${entry.prefix}]`;
-    if (useColors) {
-      parts.push(`${DIM}${prefix}${RESET}`);
-    } else {
-      parts.push(prefix);
-    }
-  }
-
-  parts.push(entry.message);
-
-  if (entry.metadata && Object.keys(entry.metadata).length > 0) {
-    parts.push(JSON.stringify(entry.metadata));
-  }
-
-  return parts.join(" ");
+export interface ConsoleTransportOptions {
+  formatter?: LogFormatter;
+  colors?: boolean;
 }
 
 export class ConsoleTransport implements LoggerTransport {
-  private readonly useColors: boolean;
+  private readonly formatter: LogFormatter;
 
-  constructor(useColors: boolean) {
-    this.useColors = useColors;
+  constructor()
+  constructor(useColors: boolean)
+  constructor(options: ConsoleTransportOptions)
+  constructor(useColorsOrOptions?: boolean | ConsoleTransportOptions) {
+    if (useColorsOrOptions === undefined) {
+      this.formatter = new TextFormatter();
+    } else if (typeof useColorsOrOptions === "boolean") {
+      this.formatter = new TextFormatter({ colors: useColorsOrOptions });
+    } else {
+      this.formatter = useColorsOrOptions.formatter ?? new TextFormatter({
+        colors: useColorsOrOptions.colors,
+      });
+    }
   }
 
   log(entry: LogEntry): void {
-    const output = formatMessage(entry, this.useColors);
+    const output = this.formatter.format(entry);
 
     switch (entry.level) {
       case "error":
@@ -69,7 +37,7 @@ export class ConsoleTransport implements LoggerTransport {
       case "info":
         console.info(output);
         break;
-      case "debug":
+      default:
         console.debug(output);
         break;
     }

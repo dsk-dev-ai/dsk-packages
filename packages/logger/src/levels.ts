@@ -1,16 +1,18 @@
-import type { LogLevel } from "./types.js";
-
-const LEVEL_PRIORITY: Record<LogLevel, number> = {
+export const LEVELS = {
   debug: 0,
   info: 1,
   warn: 2,
   error: 3,
-};
+} as const;
 
-export function shouldLog(configuredLevel: LogLevel, messageLevel: LogLevel): boolean {
-  return LEVEL_PRIORITY[messageLevel] >= LEVEL_PRIORITY[configuredLevel];
+export function shouldLog(configuredLevel: number, messageLevel: number): boolean {
+  return messageLevel >= configuredLevel;
 }
 
-export function getLevelPriority(level: LogLevel): number {
-  return LEVEL_PRIORITY[level];
+export function getLevelPriority(levelName: string): number {
+  return (LEVELS as Record<string, number>)[levelName] ?? -1;
+}
+
+export function getLevelValue(level: keyof typeof LEVELS): number {
+  return LEVELS[level];
 }

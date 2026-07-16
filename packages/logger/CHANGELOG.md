@@ -38,3 +38,21 @@
 - Full TypeScript declarations
 - ESM and CommonJS dual format
 - Tree-shakeable
+
+## 2.1.0
+
+### Minor Changes
+
+- Improve logger architecture, formatting, and developer experience
+
+### Features
+
+- **Pluggable formatters** — `LogFormatter` interface with built-in `TextFormatter` and `JsonFormatter`
+- **ConsoleTransport improvements** — Backward-compatible constructor accepts options object (`{ formatter?, colors? }`)
+- **Child loggers** — `logger.child({ prefix?, metadata? })` creates scoped loggers with merged prefix and inherited metadata
+- **Error serialization** — `SerializedError` preserves stack traces, cause chains, and error codes
+- **Safe metadata serialization** — Circular reference protection and BigInt support via `safeStringify`
+- **Extensible level system** — `LEVELS` constant and `getLevelPriority()` for custom log level integration
+- **Improved error method** — Accepts `string`, `Error`, or `unknown` values with safe fallback
+- **TypeScript improvements** — New exports: `TextFormatter`, `JsonFormatter`, `safeStringify`, `LEVELS`, `getLevelPriority`, `SerializedError`, `ChildLoggerOptions`
+- **81 tests** — Comprehensive test suite covering all APIs, edge cases, and backward compatibility
