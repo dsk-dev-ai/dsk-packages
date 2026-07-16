@@ -46,16 +46,16 @@ Current Progress
 
 This repository is built using a modern TypeScript toolchain.
 
-| Layer | Technology |
-|-------|------------|
-| Package Manager | pnpm Workspaces |
-| Monorepo | TurboRepo |
-| Language | TypeScript (Strict Mode) |
-| Linting | ESLint Flat Config |
-| Formatting | Prettier |
-| Testing | Vitest |
-| Versioning | Changesets |
-| CI/CD | GitHub Actions |
+| Layer           | Technology               |
+| --------------- | ------------------------ |
+| Package Manager | pnpm Workspaces          |
+| Monorepo        | TurboRepo                |
+| Language        | TypeScript (Strict Mode) |
+| Linting         | ESLint Flat Config       |
+| Formatting      | Prettier                 |
+| Testing         | Vitest                   |
+| Versioning      | Changesets               |
+| CI/CD           | GitHub Actions           |
 
 ---
 
@@ -100,19 +100,19 @@ Packages will be published under the npm scope:
 
 Initial roadmap includes:
 
-| Package | Status |
-|----------|--------|
-| @darshankachare/logger | 🚧 In Development |
-| @darshankachare/config | Planned |
-| @darshankachare/env | Planned |
-| @darshankachare/cache | Planned |
-| @darshankachare/http | Planned |
-| @darshankachare/events | Planned |
-| @darshankachare/queue | Planned |
-| @darshankachare/retry | Planned |
-| @darshankachare/cli | Planned |
-| @darshankachare/validation | Planned |
-| ... | More Coming |
+| Package                    | Status             |
+| -------------------------- | ------------------ |
+| @darshankachare/logger     | ✅ v2.0.0 Released |
+| @darshankachare/config     | Planned            |
+| @darshankachare/env        | Planned            |
+| @darshankachare/cache      | Planned            |
+| @darshankachare/http       | Planned            |
+| @darshankachare/events     | Planned            |
+| @darshankachare/queue      | Planned            |
+| @darshankachare/retry      | Planned            |
+| @darshankachare/cli        | Planned            |
+| @darshankachare/validation | Planned            |
+| ...                        | More Coming        |
 
 The long-term vision is to grow this repository into a comprehensive ecosystem of developer-focused libraries.
 
