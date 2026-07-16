@@ -587,13 +587,28 @@ describe("child loggers", () => {
     expect(entries[0]?.prefix).toBe("App");
   });
 
-  it("child merges base metadata", () => {
-    const parent = createLogger({ level: "debug", transport });
-    const child = parent.child({ metadata: { module: "auth" } });
-    child.info("login", { userId: 1 });
-    expect(entries[0]?.metadata).toEqual({ module: "auth", userId: 1 });
-  });
-
++  it("child merges base metadata", () => {
++    const parent = createLogger({ level: "debug", transport });
++    const child = parent.child({ metadata: { module: "auth" } });
++    child.info("login", { userId: 1 });
++    expect(entries[0]?.metadata).toEqual({ module: "auth", userId: 1 });
++  });
++
++  it("nested child merges parent metadata chain", () => {
++    const parent = createLogger({ level: "debug", transport });
++    const child1 = parent.child({ metadata: { app: "demo" } });
++    child1.info("init");
++
++    const child2 = child1.child({ metadata: { module: "auth" } });
++    child2.info("login", { userId: 1 });
++
++    expect(entries[1]?.metadata).toEqual({
++      app: "demo",
++      module: "auth",
++      userId: 1,
++    });
++  });
++
   it("child metadata does not mutate parent", () => {
     const parent = createLogger({ level: "debug", transport });
     parent.child({ metadata: { childOnly: true } });
