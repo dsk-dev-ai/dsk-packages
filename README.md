@@ -1,107 +1,350 @@
 # dsk-packages
 
-[![CI](https://github.com/darshankachare/dsk-packages/actions/workflows/ci.yml/badge.svg)](https://github.com/darshankachare/dsk-packages/actions/workflows/ci.yml)
-[![Release](https://github.com/darshankachare/dsk-packages/actions/workflows/release.yml/badge.svg)](https://github.com/darshankachare/dsk-packages/actions/workflows/release.yml)
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![pnpm](https://img.shields.io/badge/pnpm-workspace-F69220?logo=pnpm)](https://pnpm.io)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue?logo=typescript)](https://www.typescriptlang.org)
+[![CI](https://github.com/dsk-dev-ai/dsk-packages/actions/workflows/ci.yml/badge.svg)](https://github.com/dsk-dev-ai/dsk-packages/actions/workflows/ci.yml)
+[![Release](https://github.com/dsk-dev-ai/dsk-packages/actions/workflows/release.yml/badge.svg)](https://github.com/dsk-dev-ai/dsk-packages/actions/workflows/release.yml)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![pnpm](https://img.shields.io/badge/pnpm-workspace-F69220?logo=pnpm&logoColor=white)](https://pnpm.io)
 
-A collection of high-quality TypeScript packages, developer utilities, and open-source tools.
+> **Production-grade TypeScript libraries, developer utilities, and open-source tools.**
+
+---
 
 ## Vision
 
-dsk-packages provides well-tested, well-documented, and well-maintained TypeScript packages that solve common development problems. Each package is designed with type safety, performance, and developer experience as first-class concerns.
+**dsk-packages** is an open-source ecosystem of modern TypeScript libraries designed to help developers build reliable software faster.
 
-## Repository Architecture
+The goal of this repository is to provide lightweight, dependency-conscious, production-ready packages with an excellent developer experience.
 
-This monorepo is built on a modern toolchain optimized for TypeScript development:
+Every package is built around five core principles:
 
-| Layer              | Technology               |
-| ------------------ | ------------------------ |
-| Package Manager    | pnpm workspaces          |
-| Task Orchestration | TurboRepo                |
-| Language           | TypeScript (strict mode) |
-| Linting            | ESLint with flat config  |
-| Formatting         | Prettier                 |
-| Testing            | Vitest                   |
-| Versioning         | Changesets               |
+- 🔒 Type Safety
+- ⚡ Performance
+- 📦 Minimal Dependencies
+- 📖 Excellent Documentation
+- 🧪 Comprehensive Testing
 
-## Folder Structure
+This repository follows the same engineering practices used by large open-source ecosystems while remaining approachable for individual developers.
 
-```
+---
+
+# Current Status
+
+🚧 **Active Development**
+
+Current Progress
+
+- ✅ Monorepo Foundation
+- ✅ Repository Infrastructure
+- 🚧 Logger Package
+- ⏳ First npm Release
+- ⏳ Documentation Website
+
+---
+
+# Repository Architecture
+
+This repository is built using a modern TypeScript toolchain.
+
+| Layer | Technology |
+|-------|------------|
+| Package Manager | pnpm Workspaces |
+| Monorepo | TurboRepo |
+| Language | TypeScript (Strict Mode) |
+| Linting | ESLint Flat Config |
+| Formatting | Prettier |
+| Testing | Vitest |
+| Versioning | Changesets |
+| CI/CD | GitHub Actions |
+
+---
+
+# Repository Structure
+
+```text
 dsk-packages/
-├── .github/             # CI/CD workflows, issue and PR templates
-├── .vscode/             # Editor settings and recommended extensions
-├── docs/                # Documentation
-├── examples/            # Usage examples
-├── packages/            # Published npm packages
-├── scripts/             # Build and utility scripts
-├── .npmrc               # pnpm configuration
-├── turbo.json           # TurboRepo pipeline
-├── tsconfig.base.json   # Shared TypeScript base config
-├── eslint.config.mjs    # ESLint flat config
-├── vitest.workspace.ts  # Vitest workspace config
-└── package.json         # Root workspace manifest
+│
+├── .github/
+│   ├── workflows/
+│   ├── ISSUE_TEMPLATE/
+│   └── PULL_REQUEST_TEMPLATE.md
+│
+├── docs/
+│
+├── examples/
+│
+├── packages/
+│   └── ...
+│
+├── scripts/
+│
+├── .changeset/
+├── .vscode/
+├── package.json
+├── pnpm-workspace.yaml
+├── turbo.json
+├── tsconfig.base.json
+├── eslint.config.mjs
+└── README.md
 ```
 
-## Packages
+---
 
-Packages live in the `packages/` directory. Each package is independently versioned, tested, and published to npm under the `@darshankachare` scope.
+# Planned Package Ecosystem
 
-## Development Workflow
+Packages will be published under the npm scope:
+
+```
+@darshankachare/*
+```
+
+Initial roadmap includes:
+
+| Package | Status |
+|----------|--------|
+| @darshankachare/logger | 🚧 In Development |
+| @darshankachare/config | Planned |
+| @darshankachare/env | Planned |
+| @darshankachare/cache | Planned |
+| @darshankachare/http | Planned |
+| @darshankachare/events | Planned |
+| @darshankachare/queue | Planned |
+| @darshankachare/retry | Planned |
+| @darshankachare/cli | Planned |
+| @darshankachare/validation | Planned |
+| ... | More Coming |
+
+The long-term vision is to grow this repository into a comprehensive ecosystem of developer-focused libraries.
+
+---
+
+# Getting Started
+
+Clone the repository:
 
 ```bash
-# Install dependencies
-pnpm install
+git clone https://github.com/dsk-dev-ai/dsk-packages.git
 
-# Build all packages
-pnpm build
-
-# Run all tests
-pnpm test
-
-# Lint all packages
-pnpm lint
-
-# Type-check all packages
-pnpm tsc --noEmit
-
-# Format code
-pnpm format:fix
+cd dsk-packages
 ```
 
-## Release Workflow
+Install dependencies:
 
-1. Contributors create changesets with `pnpm changeset`
-2. Changesets are committed alongside code changes in pull requests
-3. Merging to `main` triggers the Release workflow
-4. The workflow creates or updates a "Version Packages" pull request
-5. Merging the Version Packages PR publishes updated packages to npm
+```bash
+pnpm install
+```
 
-See [docs/publishing.md](docs/publishing.md) and [docs/release-process.md](docs/release-process.md) for details.
+---
 
-## Package Philosophy
+# Development
 
-- **Type safety first** — Every package uses strict TypeScript with full type declarations
-- **Minimal dependencies** — Packages depend on as few external libraries as possible
-- **Tested** — Every public API is covered by unit tests
-- **Documented** — Every package includes its own README with usage examples
-- **Semver** — All packages follow semantic versioning via Changesets
+Build everything:
 
-## Contributing
+```bash
+pnpm build
+```
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow.
+Run tests:
 
-Please review [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before participating.
+```bash
+pnpm test
+```
 
-## Roadmap
+Run linter:
 
-See [ROADMAP.md](ROADMAP.md) for the project's development plan.
+```bash
+pnpm lint
+```
 
-## Security
+Run type checking:
 
-Report security vulnerabilities to **darshankachare@email.com**. See [SECURITY.md](SECURITY.md) for the disclosure process.
+```bash
+pnpm typecheck
+```
 
-## License
+Format code:
 
-[MIT](LICENSE)
+```bash
+pnpm format
+```
+
+---
+
+# Development Workflow
+
+Every feature follows the same Git workflow.
+
+```
+main
+ │
+ ├── feature/logger
+ │
+ ├── feature/cache
+ │
+ ├── feature/http
+ │
+ └── feature/...
+```
+
+Each feature branch contains one focused change.
+
+Every pull request must:
+
+- pass CI
+- include tests (where applicable)
+- follow Conventional Commits
+- include a Changeset (for publishable changes)
+
+---
+
+# Release Workflow
+
+Publishing is fully automated using **Changesets**.
+
+```
+Feature Branch
+      │
+      ▼
+Pull Request
+      │
+      ▼
+Merge into main
+      │
+      ▼
+Version Packages PR
+      │
+      ▼
+npm Publish
+```
+
+Each package follows Semantic Versioning.
+
+---
+
+# Package Philosophy
+
+Every package in this repository should be:
+
+- Small
+- Fast
+- Tree-shakeable
+- Fully Typed
+- Production Ready
+- Well Documented
+- Well Tested
+- Easy to Maintain
+
+The repository values long-term maintainability over unnecessary complexity.
+
+---
+
+# Quality Standards
+
+Every published package should provide:
+
+- Strict TypeScript support
+- 100% public API documentation
+- Unit tests
+- Consistent formatting
+- ESLint compliance
+- Semantic versioning
+- CI validation
+
+---
+
+# Contributing
+
+Contributions are welcome.
+
+Before contributing please read:
+
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+- [SECURITY.md](SECURITY.md)
+
+Development workflow:
+
+1. Fork repository
+2. Create a feature branch
+3. Make changes
+4. Run tests
+5. Submit Pull Request
+
+---
+
+# Documentation
+
+Additional documentation is available in the `docs/` directory.
+
+Topics include:
+
+- Architecture
+- Coding Standards
+- Publishing
+- Release Process
+- Getting Started
+
+---
+
+# Roadmap
+
+See:
+
+```
+ROADMAP.md
+```
+
+for the complete development roadmap.
+
+---
+
+# Security
+
+If you discover a security vulnerability, please report it privately instead of opening a public issue.
+
+Contact:
+
+**darshan.kachare.dev@gmail.com**
+
+Please see:
+
+```
+SECURITY.md
+```
+
+for responsible disclosure guidelines.
+
+---
+
+# Support
+
+If you need help:
+
+- Open a GitHub Issue
+- Start a GitHub Discussion (when enabled)
+- Read the documentation
+
+---
+
+# License
+
+Licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Author
+
+**Darshan Kachare**
+
+Software Engineer • Open Source Contributor • Founder of NextGenAI Labs
+
+GitHub:
+https://github.com/dsk-dev-ai
+
+Building reliable developer tools, TypeScript libraries, AI systems, and open-source software.
+
+---
+
+**Build. Learn. Share. Improve.**
