@@ -102,7 +102,7 @@ Initial roadmap includes:
 
 | Package                    | Status             |
 | -------------------------- | ------------------ |
-| @darshankachare/logger     | ✅ v2.0.0 Released |
+| @darshankachare/logger     | ✅ v2.1.0 Released |
 | @darshankachare/config     | Planned            |
 | @darshankachare/env        | Planned            |
 | @darshankachare/cache      | Planned            |
@@ -348,3 +348,23 @@ Building reliable developer tools, TypeScript libraries, AI systems, and open-so
 ---
 
 **Build. Learn. Share. Improve.**
+
+---
+
+## Support the Project
+
+If **dsk-packages** is useful to you, you can support its continued development through **GitHub Sponsors**.
+
+Your support helps fund:
+
+- 📦 Development and maintenance of TypeScript packages
+- 🧪 Testing and quality improvements
+- 📖 Documentation and examples
+- 🔧 Development infrastructure and CI
+- 🚀 New open-source developer tools
+
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/dsk-dev-ai?style=flat&logo=github)](https://github.com/sponsors/dsk-dev-ai)
+
+Support the project:
+
+**https://github.com/sponsors/dsk-dev-ai**
