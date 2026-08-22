@@ -102,7 +102,7 @@ Initial roadmap includes:
 
 | Package                    | Status             |
 | -------------------------- | ------------------ |
-| @darshankachare/logger     | ✅ v2.0.0 Released |
+| @darshankachare/logger     | ✅ v2.1.0 Released |
 | @darshankachare/config     | Planned            |
 | @darshankachare/env        | Planned            |
 | @darshankachare/cache      | Planned            |
