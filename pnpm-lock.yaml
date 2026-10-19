@@ -27,8 +27,8 @@ importers:
         specifier: ^3.9.6
         version: 3.9.6
       turbo:
-        specifier: ^2.10.12
-        version: 2.10.12
+        specifier: ^2.11.8
+        version: 2.11.8
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -648,33 +648,33 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@turbo/darwin-64@2.10.12':
-    resolution: {integrity: sha512-9nKgKoF6ZOUsM+or0OtNf+TTJSfGvDNP7ZFv/ZGWVwOSCkumyctQiTeHwB4UNljHTnC41AqylgbunLDHoccNrA==}
+  '@turbo/darwin-64@2.11.8':
+    resolution: {integrity: sha512-u+6s4C2hskRYx6MkW2uT7BCW6sESCL/+5bjHDDWUfQfQliCSJ7lAHAL6RQaw0an9WU6nJvwYgT786mEWul2kDw==}
     cpu: [x64]
     os: [darwin]
 
-  '@turbo/darwin-arm64@2.10.12':
-    resolution: {integrity: sha512-H4Elb1jqTZVeIC9bbcNwjSzemZ6RegoTOVHeuV5Osirt2Z8UguTyisMEkvZjPVZgMeN9J4ERZBFad40tFnkb7w==}
+  '@turbo/darwin-arm64@2.11.8':
+    resolution: {integrity: sha512-y3qpPbclA4MuzAf/pSp6ivifp2mBCiLMHyf/bVq2eAJLjTnzev9JG5eqFhM0UvDGi0b3QKRNZi2HiavPnLbEbw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@turbo/linux-64@2.10.12':
-    resolution: {integrity: sha512-lr7KIotukvjZwEXiFSYAeOH3BWzjFVBbSzTbv0fuGFsNukYyH0+g1hB5ecqnJkgkYU+KHEMG1edOhnjiKON1wQ==}
+  '@turbo/linux-64@2.11.8':
+    resolution: {integrity: sha512-5Pm0icIkXPjk/HxhZD2AFMCyfH8RlITgtOksoSAdeLtXHAagzAqaAkdqG+6Ebd3eGPT1k3nJZWQD4wCLlIte5g==}
     cpu: [x64]
     os: [android, linux]
 
-  '@turbo/linux-arm64@2.10.12':
-    resolution: {integrity: sha512-f0pZDTtvzB5SuNwuXBaKbZHUCMCukgc8nMlHEuvLmj91Fzec+MEbr3cAvGNor5htEDqZnO6Lxt9N/GPI/77oGA==}
+  '@turbo/linux-arm64@2.11.8':
+    resolution: {integrity: sha512-gh/Pcg7WVLS22SpoFqNxs/4y6feU/+Qa9nkCLTOHMTLjE3ADeqMjLFulq1LVCsWD2vjQccCnaZSUOLJ/lHzBRQ==}
     cpu: [arm64]
     os: [android, linux]
 
-  '@turbo/windows-64@2.10.12':
-    resolution: {integrity: sha512-SDOueJRjS/QcykWf2KCRtTLmIl5YMKsLbXkXQGhDwcTXvKXZiS5ih5lBl/gkwZIpYFjqA/rAlfMzlAFcVHNe0g==}
+  '@turbo/windows-64@2.11.8':
+    resolution: {integrity: sha512-NnHtcWPE6PymlYsCKEuYditlY/nMeCEB3xyD4yc3cpqpxW7/4Xqdlqd5TpqvEpjS8CDazPHelGCQS/ghUIoZ6g==}
     cpu: [x64]
     os: [win32]
 
-  '@turbo/windows-arm64@2.10.12':
-    resolution: {integrity: sha512-0i0mVUa4kKk+/B3RwEwPMf9CB+T7ul56hn5FFHNA4VUNTOoLBEd6aNf3FaKfCatDNZ6cicCEf6if9QUTVyzzcA==}
+  '@turbo/windows-arm64@2.11.8':
+    resolution: {integrity: sha512-o8UyM/VlYCvW5Enfo2O37Pe11p3wmnEYtJrohXA2SyOlehmo5KyXpptPRKrXOMNfdmoYEulo6Nhj0tIv2UB0hA==}
     cpu: [arm64]
     os: [win32]
 
@@ -1482,8 +1482,8 @@ packages:
       typescript:
         optional: true
 
-  turbo@2.10.12:
-    resolution: {integrity: sha512-AswgMPnpOoaVZHrrSBejETzEbuIA69OVGwfkHwfrY0A23VjWXBANzgq9+OymWOHAIArB7D1+1z498WY8fGg1Jw==}
+  turbo@2.11.8:
+    resolution: {integrity: sha512-OwiFs6xNO5c2XtPgYCgCXuSlkur4b5T/OeAbOKzgsHh5mmJ9Sh7m041fz2JchrvyQv8hmae+1n07HfBmvDLZRA==}
     hasBin: true
 
   type-check@0.4.0:
@@ -2078,22 +2078,22 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.62.2':
     optional: true
 
-  '@turbo/darwin-64@2.10.12':
+  '@turbo/darwin-64@2.11.8':
     optional: true
 
-  '@turbo/darwin-arm64@2.10.12':
+  '@turbo/darwin-arm64@2.11.8':
     optional: true
 
-  '@turbo/linux-64@2.10.12':
+  '@turbo/linux-64@2.11.8':
     optional: true
 
-  '@turbo/linux-arm64@2.10.12':
+  '@turbo/linux-arm64@2.11.8':
     optional: true
 
-  '@turbo/windows-64@2.10.12':
+  '@turbo/windows-64@2.11.8':
     optional: true
 
-  '@turbo/windows-arm64@2.10.12':
+  '@turbo/windows-arm64@2.11.8':
     optional: true
 
   '@types/chai@5.2.3':
@@ -2933,14 +2933,14 @@ snapshots:
       - tsx
       - yaml
 
-  turbo@2.10.12:
+  turbo@2.11.8:
     optionalDependencies:
-      '@turbo/darwin-64': 2.10.12
-      '@turbo/darwin-arm64': 2.10.12
-      '@turbo/linux-64': 2.10.12
-      '@turbo/linux-arm64': 2.10.12
-      '@turbo/windows-64': 2.10.12
-      '@turbo/windows-arm64': 2.10.12
+      '@turbo/darwin-64': 2.11.8
+      '@turbo/darwin-arm64': 2.11.8
+      '@turbo/linux-64': 2.11.8
+      '@turbo/linux-arm64': 2.11.8
+      '@turbo/windows-64': 2.11.8
+      '@turbo/windows-arm64': 2.11.8
 
   type-check@0.4.0:
     dependencies:
